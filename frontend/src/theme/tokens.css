@@ -1,0 +1,140 @@
+/* frontend/src/theme/tokens.css */
+/* ============================================================================
+   Antigravity CRM — Design System 2.0 (Foundation)
+ ----------------------------------------------------------------------------
+   CSS custom properties (the runtime palette). These are the canonical token
+   values that `semanticColors` in tokens.js reference via `rgb(var(--c-...))`.
+   A single `data-theme="light"` attribute on <html> swaps the entire palette.
+
+   Token naming: `--c-{category}-{usage}`
+     bg-*      surface colors            (color-bg-* semantic)
+     text-*    text colors               (color-text-* semantic)
+     border-*  border colors             (color-border-* semantic)
+     accent-*  brand accent colors       (color-brand-* semantic)
+     state-*   functional/category colors (color-state-* semantic)
+     overlay   high-contrast overlay     (color-bg-overlay semantic)
+ ============================================================================ */
+
+/* ---- Aurora Dark (default) ---- */
+:root {
+  /* Surfaces */
+  --c-bg-default:       6 4 11;        /* #06040B deep space */
+  --c-bg-canvas:        12 8 23;       /* #0C0817 section / sidebar */
+  --c-bg-surface:       18 16 28;      /* #12101C default card surface */
+  --c-bg-elevated:      23 20 37;      /* #171425 elevated card / modal */
+  --c-bg-hover:         32 27 49;      /* #201B31 hover state */
+  --c-bg-active:        44 38 64;      /* pressed/active */
+  --c-bg-inset:         15 13 24;      /* inset panel (kanban columns) */
+
+  /* Borders */
+  --c-border-default:   255 255 255;  /* rgba(255,255,255,0.05) */
+  --c-border-default-alpha: rgba(255, 255, 255, 0.06);
+  --c-border-strong:    255 255 255;  /* rgba(255,255,255,0.10) */
+  --c-border-strong-alpha: rgba(255, 255, 255, 0.10);
+  --c-border-interactive: 124 58 237; /* accent-primary at focus */
+  --c-border-interactive-alpha: rgba(124, 58, 237, 0.40);
+  --c-border-focus:     124 58 237;   /* focus ring */
+  --c-border-focus-alpha: rgba(124, 58, 237, 0.55);
+  --c-border-danger:    244 63 94;    /* rgba(244,63,94,0.30) */
+  --c-border-danger-alpha: rgba(244, 63, 94, 0.30);
+
+  /* Text */
+  --c-text-primary:     255 255 255;   /* #FFFFFF */
+  --c-text-secondary:   183 184 197;   /* #B7B8C5 */
+  --c-text-tertiary:    133 138 152;   /* softer for disabled */
+  --c-text-disabled:    133 138 152;
+  --c-text-inverse:     24 20 40;      /* text on brand-accent surfaces */
+  --c-text-link:        139 92 246;    /* accent-glow */
+  --c-text-link-hover:  168 85 247;    /* accent-highlight */
+
+  /* Brand accents */
+  --c-accent-primary:   124 58 237;     /* #7C3AED — primary CTA */
+  --c-accent-glow:     139 92 246;     /* #8B5CF6 — glow/hover */
+  --c-accent-highlight: 168 85 247;    /* #A855F7 — emphasis */
+  --c-accent-secondary-glow: 192 132 252; /* #C084FC */
+
+  /* Functional / categorical */
+  --c-info:             59 130 246;    /* #3B82F6 */
+  --c-success:          16 185 129;    /* #10B981 */
+  --c-warning:          245 158 11;    /* #F59E0B */
+  --c-danger:           244 63 94;     /* #F43F5E */
+
+  /* Overlay (high-contrast surface for white-on-dark elements) */
+  --c-overlay:          20 16 40;      /* dark overlay for borders/hovers in dark */
+
+  /* Elevation and effect roles */
+  --shadow-1: 0 1px 3px rgb(0 0 0 / 0.30), 0 1px 2px rgb(0 0 0 / 0.20);
+  --shadow-2: 0 4px 24px rgb(0 0 0 / 0.45), 0 0 0 1px rgb(255 255 255 / 0.06);
+  --shadow-3: 0 12px 40px rgb(0 0 0 / 0.55), 0 0 0 1px rgb(255 255 255 / 0.08), 0 0 24px rgb(var(--c-accent-primary) / 0.12);
+  --shadow-4: 0 24px 80px rgb(0 0 0 / 0.70), 0 0 40px rgb(var(--c-accent-primary) / 0.18);
+  --shadow-inset: inset 0 1px 0 rgb(255 255 255 / 0.05);
+  --shadow-focus: 0 0 0 2px rgb(var(--c-accent-primary) / 0.40), 0 0 20px rgb(var(--c-accent-primary) / 0.18);
+  --glow-subtle: 0 0 8px rgb(var(--c-accent-glow) / 0.35);
+  --glow-control: 0 0 16px rgb(var(--c-accent-primary) / 0.22);
+  --glow-strong: 0 0 32px rgb(var(--c-accent-primary) / 0.45);
+  --motion-duration-fast: 120ms;
+  --motion-duration-base: 200ms;
+  --motion-duration-slow: 300ms;
+  --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+
+  color-scheme: dark;
+}
+
+/* ---- Aurora Light ---- */
+html[data-theme="light"] {
+  /* Surfaces — light lavender family */
+  --c-bg-default:       245 244 251;    /* #F5F4FB */
+  --c-bg-canvas:        236 234 247;    /* #ECEAf7 */
+  --c-bg-surface:       255 255 255;    /* #FFFFFF card */
+  --c-bg-elevated:      255 255 255;    /* #FFFFFF elevated */
+  --c-bg-hover:         232 228 242;    /* #E8E4F2 */
+  --c-bg-active:        219 214 233;
+  --c-bg-inset:         249 247 254;
+
+  /* Borders */
+  --c-border-default-alpha: rgba(20, 16, 40, 0.08);
+  --c-border-strong-alpha: rgba(20, 16, 40, 0.12);
+  --c-border-interactive-alpha: rgba(109, 49, 213, 0.45);
+  --c-border-focus-alpha: rgba(109, 49, 213, 0.60);
+  --c-border-danger-alpha: rgba(225, 29, 72, 0.30);
+
+  /* Text */
+  --c-text-primary:     24 20 40;      /* #181428 near-black violet */
+  --c-text-secondary:   96 90 118;     /* #605A76 */
+  --c-text-tertiary:    125 119 142;   /* #7D778E */
+  --c-text-disabled:    125 119 142;
+  --c-text-inverse:     255 255 255;
+  --c-text-link:        109 49 213;    /* #6D31D5 */
+  --c-text-link-hover:  76 29 149;     /* deeper on hover */
+
+  /* Brand accents — deeper for light-mode contrast */
+  --c-accent-primary:   109 49 213;    /* #6D31D9 */
+  --c-accent-glow:     124 58 237;    /* #7C3AED */
+  --c-accent-highlight: 147 51 234;    /* #9333EA */
+  --c-accent-secondary-glow: 168 85 247; /* #A855F7 */
+
+  /* Functional / categorical */
+  --c-info:             37 99 235;     /* #2563EB */
+  --c-success:          5 150 105;     /* #059669 */
+  --c-warning:          217 119 6;     /* #D97706 */
+  --c-danger:           225 29 72;     /* #E11D48 */
+
+  /* Overlay (dark overlay for borders/hovers in light) */
+  --c-overlay:          20 16 40;
+
+  /* Light-mode elevation and effect roles */
+  --shadow-1: 0 1px 3px rgb(20 16 40 / 0.06), 0 1px 2px rgb(20 16 40 / 0.04);
+  --shadow-2: 0 4px 20px rgb(20 16 40 / 0.08), 0 0 0 1px rgb(20 16 40 / 0.06);
+  --shadow-3: 0 10px 30px rgb(20 16 40 / 0.14), 0 0 0 1px rgb(20 16 40 / 0.08), 0 0 24px rgb(var(--c-accent-primary) / 0.10);
+  --shadow-4: 0 20px 50px rgb(20 16 40 / 0.18), 0 0 32px rgb(var(--c-accent-primary) / 0.14);
+  --shadow-inset: inset 0 1px 0 rgb(255 255 255 / 0.90);
+  --shadow-focus: 0 0 0 2px rgb(var(--c-accent-primary) / 0.28), 0 0 20px rgb(var(--c-accent-primary) / 0.12);
+  --glow-subtle: 0 0 8px rgb(var(--c-accent-glow) / 0.22);
+  --glow-control: 0 0 16px rgb(var(--c-accent-primary) / 0.14);
+  --glow-strong: 0 0 32px rgb(var(--c-accent-primary) / 0.24);
+
+  color-scheme: light;
+}
+
+/* Opacity-modifier helper: rgb(var(--c-*) / <alpha-value>) resolves through these. */
+/* The / <alpha-value> syntax is read by Tailwind when extending colors as rgb(var(--x) / <alpha-value>). */

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">6
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06040B" />
+    <script>
+      // Apply persisted/system theme before first paint to prevent a flash of the wrong theme.
+      (function () {
+        try {
+          var stored = localStorage.getItem('antigravity-theme');
+          var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+          var mode = stored === 'dark' || stored === 'light' ? stored : (prefersLight ? 'light' : 'dark');
+          document.documentElement.setAttribute('data-theme', mode);
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', mode === 'dark' ? '#06040B' : '#F5F4FB');
+        } catch (e) {}
+      })();
+    </script>
+    <meta
+      name="description"
+      content="Trimax CRM — enterprise AI-powered sales CRM with real-time analytics and pipelines."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trimax CRM</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
