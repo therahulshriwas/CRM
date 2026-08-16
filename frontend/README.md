@@ -1,16 +1,72 @@
-# React + Vite
+# CRM Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React SPA for the CRM platform. Built with React 19, Vite, Tailwind CSS, Zustand, React Router, ApexCharts, Framer Motion, and Socket.io client for real-time updates.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + Vite
+- Tailwind CSS 4 + PostCSS
+- Zustand (state management)
+- React Router v7
+- ApexCharts + react-apexcharts (dashboard widgets)
+- Framer Motion (animations)
+- Socket.io client (chat + live dashboard)
+- Axios (API requests)
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Install dependencies:
 
-## Expanding the Oxlint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+2. Create `.env` from the example:
+
+```bash
+cp .env.example .env
+```
+
+3. Start the dev server:
+
+```bash
+npm run dev
+```
+
+The app runs on `http://localhost:5173` by default.
+
+## Environment Variables
+
+| Variable              | Description                              |
+| --------------------- | ---------------------------------------- |
+| `VITE_API_BASE_URL`   | Backend REST API URL (`.../api`)         |
+| `VITE_SOCKET_URL`     | Backend Socket.io URL                    |
+
+## Scripts
+
+- `npm run dev` — start Vite dev server
+- `npm run build` — production build
+- `npm run preview` — preview the production build
+- `npm run lint` — lint with Oxlint
+
+## Pages
+
+- Auth: Login, Register, Forgot Password, Reset Password, Landing
+- CRM: Dashboard, Deals (kanban), Leads, Customers, Reports, Analytics
+- Tools: Chat, Calendar, Tasks, Notes/Projects, Invoices, Employees, Notifications
+- System: AI Workspace, Admin, Search, Profile, Settings, Help
+
+## Folder Structure
+
+```
+frontend/
+├── public/          # Static assets
+├── src/
+│   ├── api/         # Axios instance + API wrappers
+│   ├── components/  # UI primitives, layout, dashboard widgets, AI assistant
+│   ├── config/      # Nav items, deal stages, lead config
+│   ├── pages/       # Route-level views
+│   ├── store/       # Zustand stores
+│   ├── theme/       # Design tokens
+│   └── utils/       # Formatting, validation, security helpers
+```
